@@ -53,6 +53,11 @@ import org.springframework.lang.Nullable;
  * @see #getResourceByPath
  * @see GenericApplicationContext
  */
+
+/*
+ * FileSystemXmlApplicationContext继承了DefaultResourceLoader，具备了ResourceLoader
+ * 读入以Resource定义的BeanDefinition的能力。
+ */
 public class FileSystemXmlApplicationContext extends AbstractXmlApplicationContext {
 
 	/**

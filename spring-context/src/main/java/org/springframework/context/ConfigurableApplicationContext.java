@@ -157,6 +157,11 @@ public interface ConfigurableApplicationContext extends ApplicationContext, Life
 	 * @throws IllegalStateException if already initialized and multiple refresh
 	 * attempts are not supported
 	 */
+	/*
+	 * Ioc容器的初始化由refresh()方法来启动。IoC容器的启动包括BeanDefinition的Resouce定位，
+	 * 载入和注册三个过程。spring使用不同的模块来完成三个过程。不包括依赖注入的实现。依赖注入一般
+	 * 发生在bean第一次被使用时，但是可以通过配置使bean在容器初始化时就注入（lazyinit）
+	 */
 	void refresh() throws BeansException, IllegalStateException;
 
 	/**
