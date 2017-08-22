@@ -41,6 +41,7 @@ import org.springframework.util.StringUtils;
  * @author Juergen Hoeller
  * @since 1.1
  */
+// TODO 提供了两种实例化对象的方法，BeanUtils（使用了jvm反射）和cglib
 public class SimpleInstantiationStrategy implements InstantiationStrategy {
 
 	private static final ThreadLocal<Method> currentlyInvokedFactoryMethod = new ThreadLocal<>();
@@ -85,9 +86,11 @@ public class SimpleInstantiationStrategy implements InstantiationStrategy {
 					}
 				}
 			}
+			// TODO BeanUtils实例化
 			return BeanUtils.instantiateClass(constructorToUse);
 		}
 		else {
+			// TODO cglib 实例化
 			// Must generate CGLIB subclass.
 			return instantiateWithMethodInjection(bd, beanName, owner);
 		}
