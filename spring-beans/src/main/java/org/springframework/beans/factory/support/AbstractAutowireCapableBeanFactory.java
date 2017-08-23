@@ -1548,6 +1548,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 				AutowireUtils.isSetterDefinedInInterface(pd, this.ignoredDependencyInterfaces));
 	}
 
+	// todo 提前bean的依赖检查，避免在第一次调用getbean是无法生成bean
 	/**
 	 * Perform a dependency check that all properties exposed have been set,
 	 * if desired. Dependency checks can be objects (collaborating beans),

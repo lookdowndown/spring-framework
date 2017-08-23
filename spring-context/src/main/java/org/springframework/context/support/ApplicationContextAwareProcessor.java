@@ -97,6 +97,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 		return bean;
 	}
 
+	// todo 初始化bean之前根据bean实现的借口将与IoC容器相关的bean注入到bean中
 	private void invokeAwareInterfaces(Object bean) {
 		if (bean instanceof Aware) {
 			if (bean instanceof EnvironmentAware) {
