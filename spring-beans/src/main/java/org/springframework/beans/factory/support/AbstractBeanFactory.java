@@ -243,7 +243,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 		final String beanName = transformedBeanName(name);
 		Object bean;
 
-		// todo 先从缓存中取得备案，处理那些已经被创建过的单件模式的bean，对这种bean的请求不需要重复的创建
+		// todo 先从缓存中取得bean，处理那些已经被创建过的单件模式的bean，对这种bean的请求不需要重复的创建
 		// Eagerly check singleton cache for manually registered singletons.
 		Object sharedInstance = getSingleton(beanName);
 		if (sharedInstance != null && args == null) {

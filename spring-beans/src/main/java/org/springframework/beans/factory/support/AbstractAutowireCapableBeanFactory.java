@@ -587,6 +587,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		try {
 			populateBean(beanName, mbd, instanceWrapper);
 			if (exposedObject != null) {
+				// todo 在完成对bean的生和依赖注入后，开始对bean进行初始化，这个初始化的过程包含对后置处理器BeanPostProcessor
+				// #postProcessBeforeInitialization的回调
 				exposedObject = initializeBean(beanName, exposedObject, mbd);
 			}
 		}
@@ -1724,6 +1726,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
 		Object wrappedBean = bean;
 		if (mbd == null || !mbd.isSynthetic()) {
+			// todo
 			wrappedBean = applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
 		}
 
@@ -1737,6 +1740,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 						beanName, "Invocation of init method failed", ex);
 			}
 			if (mbd == null || !mbd.isSynthetic()) {
+				// todo
 				wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
 			}
 		}
