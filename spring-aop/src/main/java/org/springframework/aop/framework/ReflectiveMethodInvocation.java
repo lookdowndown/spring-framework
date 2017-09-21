@@ -155,6 +155,7 @@ public class ReflectiveMethodInvocation implements ProxyMethodInvocation, Clonea
 	}
 
 
+	// todo 处理拦截器链
 	@Override
 	@Nullable
 	public Object proceed() throws Throwable {
@@ -171,6 +172,7 @@ public class ReflectiveMethodInvocation implements ProxyMethodInvocation, Clonea
 			InterceptorAndDynamicMethodMatcher dm =
 					(InterceptorAndDynamicMethodMatcher) interceptorOrInterceptionAdvice;
 			if (dm.methodMatcher.matches(this.method, this.targetClass, this.arguments)) {
+				// todo 调用advice
 				return dm.interceptor.invoke(this);
 			}
 			else {

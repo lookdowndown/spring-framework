@@ -95,6 +95,9 @@ public class ContextLoaderListener extends ContextLoader implements ServletConte
 	}
 
 
+	/* todo 初始化spring web application context， ContextLoaderListener实现了ServletContextListener，
+	 * 它是servlet的监听者，由web容器回调
+	 */
 	/**
 	 * Initialize the root web application context.
 	 */

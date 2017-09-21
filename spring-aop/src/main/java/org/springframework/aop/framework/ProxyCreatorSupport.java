@@ -102,6 +102,7 @@ public class ProxyCreatorSupport extends AdvisedSupport {
 		if (!this.active) {
 			activate();
 		}
+		// todo 通过AopProxyFactory取得AopFactory，这个AopProxyFactory是在初始化函数中定义的，使用的是DefaultAopFactory
 		return getAopProxyFactory().createAopProxy(this);
 	}
 

@@ -490,6 +490,8 @@ public class DispatcherServlet extends FrameworkServlet {
 		initStrategies(context);
 	}
 
+	// todo 启动spring mvc框架的初始化
+	// 支持国际化的LocalResolver, 支持request映射的HandlerMapping，视图生成的ViewResolver的初始化
 	/**
 	 * Initialize the strategy objects that this servlet uses.
 	 * <p>May be overridden in subclasses in order to initialize further strategy objects.
